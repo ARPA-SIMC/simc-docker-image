@@ -5,7 +5,7 @@ source "$1"
 
 distro="$2"
 
-if [[ "$distro" == centos ]]
+if [[ "$distro" =~ centos ]]
 then
     pkgcmd="yum"
     sed -i '/^tsflags=/d' /etc/yum.conf
@@ -18,7 +18,7 @@ then
     do
         yum copr enable -y $copr epel-7
     done
-elif [[ "$distro" == fedora ]]
+elif [[ "$distro" =~ fedora ]]
 then
     pkgcmd="dnf"
     sed -i '/^tsflags=/d' /etc/dnf/dnf.conf
