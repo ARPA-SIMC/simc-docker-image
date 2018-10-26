@@ -25,5 +25,6 @@ do
 done
 
 popd # src
+rm -rf src
 
 dnf install -y ${PACKAGES}
