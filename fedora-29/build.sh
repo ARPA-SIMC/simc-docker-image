@@ -44,7 +44,7 @@ do
     git clone http://github.com/arpa-simc/$repo
     pushd $repo
     git checkout $ref
-    bash .travis-build.sh fedora:28
+    bash .travis-build.sh $distro
     find ~/rpmbuild/RPMS -name "*.rpm" -print0 | xargs -0 $pkgcmd install -y
     popd # $repo
 done
