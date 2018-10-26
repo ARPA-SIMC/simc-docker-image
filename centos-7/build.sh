@@ -18,6 +18,7 @@ then
         yum copr enable -y $copr epel-7
     done
 elif [[ "$distro" == fedora ]]
+then
     sed -i '/^tsflags=/d' /etc/dnf/dnf.conf
     dnf install -y @buildsys-build
     dnf install -y 'dnf-command(builddep)'

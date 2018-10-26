@@ -6,9 +6,18 @@ The default configuration builds an image with all the software needed at
 Arpae-SIMC, without development packages. You can modify `build.conf` to
 customize the image (see above).
 
+To build one of the images:
+
 ```
-docker build -t NAME:TAG .
+docker build -t NAME:TAG DIRECTORY
 ```
+
+E.g.
+
+```
+docker build -t arpaesimc/fedora:28 fedora-28
+```
+
 
 ## Configuration
 

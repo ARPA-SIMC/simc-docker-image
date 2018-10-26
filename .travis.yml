@@ -2,7 +2,14 @@ services:
     - docker
 
 install:
-    - docker build -t simc:stable .
+    - docker build -t arpaesimc:$IMAGE
+
+env:
+    - IMAGE=centos-7
+    - IMAGE=fedora-27
+    - IMAGE=fedora-28
+    - IMAGE=fedora-29
+    - IMAGE=fedora-rawhide
 
 script:
-    - docker run simc:stable /bin/bash -c "arki-query --version"
+    - docker run arpaesimc:$IMAGE /bin/bash -c "arki-query --version"
