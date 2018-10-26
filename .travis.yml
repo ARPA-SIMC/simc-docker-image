@@ -2,7 +2,7 @@ services:
     - docker
 
 install:
-    - docker build -t arpaesimc:$IMAGE
+    - docker build -t arpaesimc:$IMAGE $IMAGE
 
 env:
     - IMAGE=centos-7
