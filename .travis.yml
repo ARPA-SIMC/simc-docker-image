@@ -1,0 +1,8 @@
+services:
+    - docker
+
+install:
+    - docker build -t simc:stable .
+
+script:
+    - docker run simc:stable /bin/bash -c "arki-query --version"
