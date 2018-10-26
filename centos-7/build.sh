@@ -7,6 +7,7 @@ distro="$2"
 
 if [[ "$distro" == centos ]]
 then
+    pkgcmd="yum"
     sed -i '/^tsflags=/d' /etc/yum.conf
     yum install -y epel-release
     yum install -y @buildsys-build
@@ -19,6 +20,7 @@ then
     done
 elif [[ "$distro" == fedora ]]
 then
+    pkgcmd="dnf"
     sed -i '/^tsflags=/d' /etc/dnf/dnf.conf
     dnf install -y @buildsys-build
     dnf install -y 'dnf-command(builddep)'
@@ -43,11 +45,11 @@ do
     pushd $repo
     git checkout $ref
     bash .travis-build.sh fedora:28
-    find ~/rpmbuild/RPMS -name "*.rpm" -print0 | xargs -0 dnf install -y
+    find ~/rpmbuild/RPMS -name "*.rpm" -print0 | xargs -0 $pkgcmd install -y
     popd # $repo
 done
 
 popd # src
 rm -rf src
 
-dnf install -y ${PACKAGES}
+$pkgcmd install -y ${PACKAGES}
