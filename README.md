@@ -6,6 +6,12 @@ The default configuration builds an image with all the software needed at
 Arpae-SIMC, without development packages. You can modify `build.conf` to
 customize the image (see above).
 
+To update the Dockerfiles
+
+```
+make
+```
+
 To build one of the images:
 
 ```
