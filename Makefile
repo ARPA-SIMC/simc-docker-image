@@ -3,7 +3,10 @@ RH_BUILD_SCRIPTS = $(RH_DIRS:=/build.sh)
 RH_BUILD_CONFS = $(RH_DIRS:=/build.conf)
 RH_DOCKERFILES = $(RH_DIRS:=/Dockerfile)
 
-all: $(RH_BUILD_SCRIPTS) $(RH_BUILD_CONFS) $(RH_DOCKERFILES)
+all: $(RH_DIRS) $(RH_BUILD_SCRIPTS) $(RH_BUILD_CONFS) $(RH_DOCKERFILES)
+
+$(RH_DIRS):
+	mkdir $@
 
 $(RH_BUILD_SCRIPTS): rh-build.sh
 	cp $< $@
