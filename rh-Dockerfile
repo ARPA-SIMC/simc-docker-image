@@ -1,0 +1,5 @@
+FROM @IMAGE@
+COPY build.sh /
+COPY build.conf /
+RUN /bin/bash /build.sh /build.conf @IMAGE@
+RUN /bin/bash -c "rm /build.{sh,conf}"
