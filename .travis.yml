@@ -9,6 +9,7 @@ env:
     - IMAGE=fedora-27
     - IMAGE=fedora-28
     - IMAGE=fedora-29
+    - IMAGE=fedora-30
     - IMAGE=fedora-rawhide
 
 script:
