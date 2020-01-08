@@ -5,7 +5,7 @@ source "$1"
 
 distro="$2"
 
-if [[ "$distro" =~ centos ]]
+if [[ "$distro" =~ centos:7 ]]
 then
     pkgcmd="yum"
     sed -i '/^tsflags=/d' /etc/yum.conf
@@ -17,6 +17,21 @@ then
     for copr in $COPR
     do
         yum copr enable -y $copr epel-7
+    done
+elif [[ $image =~ ^centos:8 ]]
+then
+    pkgcmd="dnf"
+    builddep="dnf builddep"
+    sed -i '/^tsflags=/d' /etc/dnf/dnf.conf
+    dnf install -y epel-release
+    dnf install -y 'dnf-command(config-manager)'
+    dnf config-manager --set-enabled PowerTools
+    dnf groupinstall -y "Development Tools"
+    dnf install -y 'dnf-command(builddep)'
+    dnf install -y git
+    for copr in $COPR
+    do
+        dnf copr enable -y $copr
     done
 elif [[ "$distro" =~ fedora ]]
 then
