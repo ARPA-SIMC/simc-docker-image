@@ -21,6 +21,7 @@ then
     builddep="dnf builddep"
     sed -i '/^tsflags=/d' /etc/dnf/dnf.conf
     dnf install -y epel-release
+    dnf install -y 'dnf-command(copr)'
     for copr in $COPR
     do
         dnf copr enable -y $copr
@@ -28,6 +29,7 @@ then
 elif [[ "$distro" =~ fedora ]]
 then
     pkgcmd="dnf"
+    dnf install -y 'dnf-command(copr)'
     sed -i '/^tsflags=/d' /etc/dnf/dnf.conf
     for copr in $COPR
     do
