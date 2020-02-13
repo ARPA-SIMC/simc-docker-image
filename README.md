@@ -3,8 +3,27 @@
 Docker image with Arpae-SIMC software.
 
 The default configuration builds an image with all the software needed at
-Arpae-SIMC, without development packages. You can modify `build.conf` to
-customize the image (see above).
+Arpae-SIMC, without development packages.
+
+## Dockerhub repositories
+
+### CentOS
+
+![Docker Automated](https://img.shields.io/docker/automated/arpaesimc/centos.svg)
+![Docker Build](https://img.shields.io/docker/build/arpaesimc/centos.svg)
+
+https://hub.docker.com/repository/docker/arpaesimc/centos
+
+### Fedora
+
+![Docker Automated](https://img.shields.io/docker/automated/arpaesimc/fedora.svg)
+![Docker Build](https://img.shields.io/docker/build/arpaesimc/fedora.svg)
+
+https://hub.docker.com/repository/docker/arpaesimc/fedora
+
+## Manual build
+
+You can modify `build.conf` to customize the image (see below).
 
 To update the Dockerfiles
 
