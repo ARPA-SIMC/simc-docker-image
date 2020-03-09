@@ -12,5 +12,9 @@ env:
     - IMAGE=fedora-32
     - IMAGE=fedora-rawhide
 
+matrix:
+    allow_failures:
+        - env: IMAGE=fedora-rawhide
+
 script:
     - docker run arpaesimc:$IMAGE /bin/bash -c "arki-query --version"
