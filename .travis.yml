@@ -7,7 +7,7 @@ env:
 - IMAGE=centos-8
 - IMAGE=fedora-31
 - IMAGE=fedora-32
-- IMAGE=fedora:33
+- IMAGE=fedora-33
 - IMAGE=fedora-rawhide
 matrix:
   allow_failures:
