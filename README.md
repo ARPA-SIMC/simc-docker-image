@@ -1,3 +1,4 @@
+[![Build Status](https://badges.herokuapp.com/travis/ARPA-SIMC/simc-docker-image?branch=master&env=DOCKER_IMAGE=fedora:33&label=fedora33)](https://travis-ci.org/ARPA-SIMC/simc-docker-image)
 
 # Arpae-SIMC docker image
 

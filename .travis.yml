@@ -3,6 +3,7 @@ services:
 install:
 - docker build -t arpaesimc:$IMAGE $IMAGE
 env:
+- DOCKER_IMAGE=fedora:33
 - IMAGE=centos-7
 - IMAGE=centos-8
 - IMAGE=fedora-30
