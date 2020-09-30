@@ -1,20 +1,16 @@
 services:
-    - docker
-
+- docker
 install:
-    - docker build -t arpaesimc:$IMAGE $IMAGE
-
+- docker build -t arpaesimc:$IMAGE $IMAGE
 env:
-    - IMAGE=centos-7
-    - IMAGE=centos-8
-    - IMAGE=fedora-30
-    - IMAGE=fedora-31
-    - IMAGE=fedora-32
-    - IMAGE=fedora-rawhide
-
+- IMAGE=centos-7
+- IMAGE=centos-8
+- IMAGE=fedora-30
+- IMAGE=fedora-31
+- IMAGE=fedora-32
+- IMAGE=fedora-rawhide
 matrix:
-    allow_failures:
-        - env: IMAGE=fedora-rawhide
-
+  allow_failures:
+  - env: IMAGE=fedora-rawhide
 script:
-    - docker run arpaesimc:$IMAGE /bin/bash -c "arki-query --version"
+- docker run arpaesimc:$IMAGE /bin/bash -c "arki-query --version"
