@@ -22,7 +22,7 @@ then
     sed -i '/^tsflags=/d' /etc/dnf/dnf.conf
     dnf install -y epel-release
     dnf install -q -y 'dnf-command(config-manager)'
-    dnf config-manager --set-enabled PowerTools
+    dnf config-manager --set-enabled powertools
     dnf install -y 'dnf-command(copr)'
     for copr in $COPR
     do
