@@ -15,7 +15,7 @@ then
     do
         yum copr enable -y $copr epel-7
     done
-elif [[ $distro =~ ^centos:8 ]]
+elif [[ $distro =~ ^rockylinux:8 ]]
 then
     pkgcmd="dnf"
     builddep="dnf builddep"

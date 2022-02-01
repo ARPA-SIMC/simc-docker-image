@@ -1,4 +1,4 @@
-RH_DIRS = centos-7 centos-8 fedora-32 fedora-33 fedora-34 fedora-rawhide
+RH_DIRS = centos-7 rockylinux-8 fedora-32 fedora-33 fedora-34 fedora-rawhide
 RH_BUILD_SCRIPTS = $(RH_DIRS:=/build.sh)
 RH_BUILD_CONFS = $(RH_DIRS:=/build.conf)
 RH_DOCKERFILES = $(RH_DIRS:=/Dockerfile)
