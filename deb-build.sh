@@ -17,6 +17,17 @@ else
     exit 1
 fi
 
+apt-get install -y apt-utils
+mkdir -p /packages/debs
+cp -a /debs /packages/debs
+pushd /packages
+apt-ftparchive packages debs > Packages
+popd
+echo 'deb [trusted=yes] file:///packages ./' > /etc/apt/sources.list.d/tmp.list
+apt-get update
+apt-get remove -y apt-utils
+apt-get autoremove -y
+
 if [[ ${#GITREF[@]} -gt 0 ]]
 then
     echo "Snapshot build not already supported"
@@ -44,3 +55,7 @@ then
 fi
 
 apt-get -y install ${PACKAGES}
+
+rm -rf /packages
+rm /etc/apt/sources.list.d/tmp.list
+apt-get update
