@@ -3,7 +3,7 @@ RH_BUILD_SCRIPTS = $(RH_DIRS:=/build.sh)
 RH_BUILD_CONFS = $(RH_DIRS:=/build.conf)
 RH_DOCKERFILES = $(RH_DIRS:=/Dockerfile)
 
-DEB_DIRS = ubuntu-22.04 debian-11
+DEB_DIRS = ubuntu-jammy
 DEB_BUILD_SCRIPTS = $(DEB_DIRS:=/build.sh)
 DEB_BUILD_CONFS = $(DEB_DIRS:=/build.conf)
 DEB_DOCKERFILES = $(DEB_DIRS:=/Dockerfile)
